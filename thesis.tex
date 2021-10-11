@@ -12,7 +12,7 @@
 % 采用了自定义的（包括大小写不同于原文件的）字体文件名，
 % 并改动 ctex.cfg 等配置文件的用户请自行加入 nofonts 选项；
 % 其它用户不用加入 nofonts 选项，加入之后反而会产生错误。
-\documentclass[UTF8]{pkuthss}
+\documentclass[UTF8, openany]{pkuthss}
 % 如果的确须要使脚注按页编号的话，可以去掉后面 footmisc 包的注释。
 % 注意：在启用此设定的情况下，可能要多编译一次以产生正确的脚注编号。
 %\usepackage[perpage]{footmisc}
@@ -33,17 +33,18 @@
 
 % 设定文档的基本信息。
 \pkuthssinfo{
-	cthesisname = {硕士研究生学位论文}, ethesisname = {Master Thesis},
-	ctitle = {基于PKUTHSS的测试文档}, etitle = {Test Document},
-	cauthor = {作者名称},
+	cthesisname = {硕士研究生学位论文 \\ \vspace{1em} 开题报告}, ethesisname = {Master Thesis},
+	ctitle = {面向实验室划水的方法研究}, etitle = {Test Document},
+	cauthor = {李3号},
 	eauthor = {Author Name},
-	studentid = {19012345678},
-	date = {二〇二〇年三月},
-	school = {学院名称},
-	cmajor = {专业名称}, emajor = {Major Name},
-	direction = {方向名称},
-	cmentor = {教授名称}, ementor = {Prof.\ Someone},
-	ckeywords = {其一，其二}, ekeywords = {First, Second}
+	studentid = {1901213091},
+	date = {二〇二一年九月},
+	school = {信息工程学院},
+	cmajor = {计算机应用技术}, emajor = {Major Name},
+	direction = {多媒体信息处理技术},
+	cmentor = {某某某教授}, ementor = {Prof.\ Someone},
+	ckeywords = {其一，其二}, ekeywords = {First, Second},
+	timerange = {2021.09-2021.05}
 }
 % 载入参考文献数据库（注意不要省略“.bib”）。
 \addbibresource{thesis.bib}
@@ -51,20 +52,21 @@
 % 普通用户可删除此段，并相应地删除 chap/*.tex 中的
 % “\pkuthssffaq % 中文测试文字。”一行。
 \usepackage{color}
-\def\pkuthssffaq{%
-	\emph{\textcolor{red}{pkuthss 文档模版最常见问题：}}
+% \def\pkuthssffaq{%
+% 	\emph{\textcolor{red}{pkuthss 文档模版最常见问题：}}
 
-	\texttt{\string\cite}、\texttt{\string\parencite} %
-	和 \texttt{\string\supercite} 三个命令分别产生%
-	上标且带方括号、带方括号的和未格式化的引用标记：%
-	\cite{test-en}，\parencite{test-zh}、\supercite{test-en, test-zh}。
+% 	\texttt{\string\cite}、\texttt{\string\parencite} %
+% 	和 \texttt{\string\supercite} 三个命令分别产生%
+% 	上标且带方括号、带方括号的和未格式化的引用标记：%
+% 	\cite{test-en}，\parencite{test-zh}、\supercite{test-en, test-zh}。
 
-	若要避免章末空白页，请在调用 pkuthss 文档类时加入 \texttt{openany} 选项。
+% 	若要避免章末空白页，请在调用 pkuthss 文档类时加入 \texttt{openany} 选项。
 
-	如果编译时不出参考文献，
-	请参考 \texttt{texdoc pkuthss}“问题及其解决”一章
-	“上游宏包可能引起的问题”一节中关于 biber 的说明。%
-}
+% 	如果编译时不出参考文献，
+% 	请参考 \texttt{texdoc pkuthss}“问题及其解决”一章
+% 	“上游宏包可能引起的问题”一节中关于 biber 的说明。%
+% }
+\usepackage{multirow}
 
 \begin{document}
 	% 以下为正文之前的部分，默认不进行章节编号。
@@ -75,7 +77,7 @@
 	\maketitle
 	% 版权声明。封面要求单面打印，故须新开右页。
 	\cleardoublepage
-	\include{chap/copy}
+	% \include{chap/copy}
 
 	% 此后到下一 \pagestyle 命令之前正常排版页眉和页脚。
 	\cleardoublepage
@@ -84,7 +86,7 @@
 	\setcounter{page}{0}
 	\pagenumbering{Roman}
 	% 中西文摘要。
-	\include{chap/abs}
+	% \include{chap/abs}
 	% 自动生成目录。
 	\tableofcontents
 
@@ -94,21 +96,25 @@
 	\include{chap/chap1}
 	\include{chap/chap2}
 	\include{chap/chap3}
+	\include{chap/4}
+	\include{chap/5}
+	\include{chap/6}
+	\include{chap/7}
 
 	% 正文中的附录部分。
-	\appendix
+	% \appendix
 	% 排版参考文献列表。bibintoc 选项使“参考文献”出现在目录中；
 	% 如果同时要使参考文献列表参与章节编号，可将“bibintoc”改为“bibnumbered”。
 	\printbibliography[heading = bibintoc]
 	% 各附录。
-	\include{chap/encl1}
+	% \include{chap/encl1}
 
 	% 以下为正文之后的部分，默认不进行章节编号。
 	\backmatter
 	% 致谢。
-	\include{chap/ack}
+	% \include{chap/ack}
 	% 原创性声明和使用授权说明。
-	\include{chap/origin}
+	% \include{chap/origin}
 \end{document}
 
 % vim:ts=4:sw=4

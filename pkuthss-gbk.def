@@ -35,6 +35,7 @@
 \def\label@ementor{Directed by\ }
 \def\label@ckeywords{关键词：}
 \def\label@ekeywords{KEY WORDS:\ }
+\def\label@timerange{论文工作起止时间：}
 
 \def\titlepagename{封面}
 \def\cuniversity{北京大学}

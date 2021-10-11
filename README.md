@@ -1,3 +1,33 @@
+# pkuszdp: LaTeX template for dissertation proposals in Peking University Shenzhen
+
+source: [Thesharing/pkuthss](https://github.com/Thesharing/pkuthss)
+
+本项目是**非官方**LaTeX版的北京大学深圳研究生院的开题报告。原模版见上链接，为北大硕士论文的模板。本项目按照官方Word模板进行了修改，不过原Word模板有诸多老旧的地方，比如校徽还是老版，所以本模板生成的文件与Word版会有不同。
+
+
+## 使用指南：
+
+使用本项目编写开题报告，需要修改一下内容：
+
+```
+thesis.tex -> 封面信息
+chap/*.tex -> 各章节内容
+image/*.* -> 图片，当然也可随意放置
+```
+
+在Windows下，双击`Make.bat`即可编译，大约需要30-60s时间，生成的`thesis.pdf`即为开题报告。
+
+注意事项：
+1. LaTeX有一定门槛，建议先简单入门之后再使用本文档。
+2. 按照Word模板来看，《个人简介》这一章节应当和前一章节放在一起，因此用了一点丑陋的代码实现。
+3. 《个人简介》中的个人照片，和右侧文本难以对齐，笔者能力有限，只能在图片下面手动添加白色空白区域，以达到视觉上的对齐。
+
+如遇到问题，欢迎自行解决后提交PR，毕竟笔者也不一定能解决。以下为原模板内容。
+
+---
+
+
+
 # pkuthss: LaTeX template for dissertations in Peking University
 
 Source: [CasperVector/pkuthss](https://github.com/CasperVector/pkuthss)

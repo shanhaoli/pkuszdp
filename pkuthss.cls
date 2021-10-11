@@ -59,7 +59,8 @@
 % defined document information (author, title, etc.).
 \thss@int@boolopt{pdfprop}{true}
 % Whether to disable some infractions intended to make the style less ugly.
-\thss@int@boolopt{ugly}{false}
+% \thss@int@boolopt{ugly}{false}
+\thss@int@boolopt{ugly}{true}
 % Pass all other options to `ctexbook' document class.
 \DeclareOption*{\PassOptionsToClass{\CurrentOption}{ctexbook}}
 % Process all class options now.
@@ -245,6 +246,7 @@
 \thss@int@infoitema{direction}
 \thss@int@infoitema{cmentor}
 \thss@int@infoitema{ementor}
+\thss@int@infoitema{timerange}
 \thss@int@infoitema{ckeywords}
 \thss@int@infoitema{ekeywords}
 \thss@int@infoitemb{cuniversity}
@@ -273,7 +275,8 @@
 	chapter = {
 		beforeskip = {0bp}, afterskip = {18bp plus 0.2ex},
 		nameformat = {}, titleformat = {}
-	}, section =
+	},
+	section =
 		{beforeskip = {20bp plus 1ex minus 0.2ex}, afterskip = {5bp plus 0.2ex}},
 	subsection =
 		{beforeskip = {12bp plus 1ex minus 0.2ex}, afterskip = {5bp plus 0.2ex}},
@@ -282,7 +285,8 @@
 }
 \ifthss@opt@ugly
 	\ctexset{
-		chapter = {format = {\zihao{3}\bfseries\centering}},
+		% chapter = {format = {\zihao{3}\bfseries\centering}},
+		chapter = {format = {\zihao{3}\bfseries}},
 		section = {format = {\zihao{4}\bfseries}},
 		subsection = {format = {\fontsize{13bp}{15.6bp}\selectfont\bfseries}},
 		subsubsection = {format = {\zihao{-4}\bfseries}}
@@ -312,16 +316,38 @@
 	}
 \fi
 % The actual page style setup.
+% \fancypagestyle{plain}{
+% 	\fancyhf{}\renewcommand*{\headrulewidth}{0.75bp}
+% 	\fancyfoot[C]{\zihao{5}\normalfont{\thepage}}
+% 	\if@twoside
+% 		\fancyhead[CE]{\zihao{5}\normalfont{\cuniversity{硕士学位论文}}}
+% 		\fancyhead[CO]{\zihao{5}\normalfont\thss@int@setcase{\leftmark}}
+% 	\else
+% 		\fancyhead[C]{\zihao{5}\normalfont\thss@int@setcase{\leftmark}}
+% 	\fi
+% }
+
+% The actual page style setup.
 \fancypagestyle{plain}{
 	\fancyhf{}\renewcommand*{\headrulewidth}{0.75bp}
 	\fancyfoot[C]{\zihao{5}\normalfont{\thepage}}
-	\if@twoside
-		\fancyhead[CE]{\zihao{5}\normalfont{\cuniversity{硕士学位论文}}}
-		\fancyhead[CO]{\zihao{5}\normalfont\thss@int@setcase{\leftmark}}
-	\else
-		\fancyhead[C]{\zihao{5}\normalfont\thss@int@setcase{\leftmark}}
-	\fi
+	\lhead{\raisebox{-0.38\height}{
+		% \vspace{}
+		\includegraphics[width=2cm]{cover/pkuword-wholeblack.pdf}}\zihao{5}\normalfont{硕士学位论文开题报告}
+	}
+	\rhead{\zihao{5}\normalfont{题目：\@ctitle}}
+	% \if@twoside
+	% 	% \fancyhead[CE]{\zihao{5}\normalfont{\cuniversity{硕士学位论文}}}
+	% 	% \fancyhead[C)]{\zihao{5}\normalfont{\cuniversity{硕士学位论文}}{\leftmark}}
+	% 	% \fancyhead[CO]{\zihao{5}\normalfont\thss@int@setcase{\leftmark}}
+	% 	% \fancyhead[L]{\includegraphics[width=1.5cm]{cover/pkuword-black.eps} \zihao{5}\normalfont{硕士学位论文开题报告}}}
+	% 	\fancyhead[L]{\includegraphics[width=1.5cm]{cover/pkuword-black.eps}\zihao{5}\normalfont{硕士学位论文开题报告}}
+	% 	\fancyhead[R]{\zihao{5}\normalfont{题目：\@ctitle}}
+	% \else
+	% 	\fancyhead[C]{\zihao{5}\normalfont\thss@int@setcase{\leftmark}}
+	% \fi
 }
+
 \pagestyle{plain}
 
 % This places a bookmark pointing to somewhere near the page header;
@@ -393,6 +419,14 @@
 				{\bfseries\label@cmentor}		&
 				\thss@int@fillinblank{1}{\thss@tmp@len}{\fangsong\@cmentor}		\\
 			\end{tabular}%
+
+			\vspace*{-0.55cm}
+			\zihao{3}\linespread{2.95}\selectfont
+			\def\thss@tmp@len{0.56\textwidth}
+			\begin{tabular}{l@{\extracolsep{0.2em}}c}
+				{\bfseries\label@timerange}		
+				\thss@int@fillinblank{1}{0.415\textwidth}{\fangsong\@timerange}	\\
+			\end{tabular}
 		}
 		\vfill
 		% Date.
