@@ -7,7 +7,9 @@ source: [Thesharing/pkuthss](https://github.com/Thesharing/pkuthss)
 
 ## 使用指南：
 
-使用本项目编写开题报告，需要修改一下内容：
+1. 安装LaTeX环境。（推荐下面**pkuthss**的链接[VSCode + LaTeX](https://zhuanlan.zhihu.com/p/108095566)）
+
+2. 使用本项目编写开题报告，按需要修改一下内容：
 
 ```
 thesis.tex -> 封面信息
