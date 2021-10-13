@@ -61,6 +61,8 @@
 % Whether to disable some infractions intended to make the style less ugly.
 % \thss@int@boolopt{ugly}{false}
 \thss@int@boolopt{ugly}{true}
+% change equation number to dash (1.1) -> (1-1)
+\thss@int@boolopt{dashquationnumber}{true}
 % Pass all other options to `ctexbook' document class.
 \DeclareOption*{\PassOptionsToClass{\CurrentOption}{ctexbook}}
 % Process all class options now.
@@ -298,6 +300,11 @@
 		subsection = {format = {\zihao{4}\bfseries}},
 		subsubsection = {format = {\bfseries}}
 	}
+\fi
+
+% change equation number from (5.1) to (5-1)
+\ifthss@opt@dashquationnumber
+	\renewcommand{\theequation}{\arabic{section}-\arabic{equation}}
 \fi
 
 % `\MakeUppercase' works problematically.
