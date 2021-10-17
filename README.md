@@ -1,30 +1,31 @@
 # pkuszdp: LaTeX template for dissertation proposals in Peking University Shenzhen
 
-source: [Thesharing/pkuthss](https://github.com/Thesharing/pkuthss)
+> 基于北大硕士论文模板: [Thesharing/pkuthss](https://github.com/Thesharing/pkuthss)
 
-本项目是**非官方**LaTeX版的北京大学深圳研究生院的开题报告。原模版见上链接，为北大硕士论文的模板。本项目按照官方Word模板进行了修改，不过原Word模板有诸多老旧的地方，比如校徽还是老版，所以本模板生成的文件与Word版会有不同。
+本项目是**非官方** LaTeX 版的北京大学深圳研究生院的开题报告，已按照官方 Word 模板进行修改。但需要注意，本模板生成的文件与 Word 版**并非完全相同**，如封面校徽改为新版，以及封面字体按照《北京大学研究生论文写作指南》中要求改为黑体。
 
+## 使用指南
 
-## 使用指南：
+1. 推荐阅读原 repo 中的 [`README.md`](https://github.com/asuith/pkuszdp#pkuthss-latex-template-for-dissertations-in-peking-university)。
+2. 安装 LaTeX 环境。
+3. 使用本项目编写开题报告，按需修改以下内容：
 
-1. 安装LaTeX环境。（推荐下面**pkuthss**的链接[VSCode + LaTeX](https://zhuanlan.zhihu.com/p/108095566)）
-
-2. 使用本项目编写开题报告，按需要修改一下内容：
-
-```
+```text
 thesis.tex -> 封面信息
 chap/*.tex -> 各章节内容
 image/*.* -> 图片，当然也可随意放置
 ```
 
-在Windows下，双击`Make.bat`即可编译，大约需要30-60s时间，生成的`thesis.pdf`即为开题报告。
+在 Windows 下，双击 `Make.bat` 即可编译，大约需要 30-60s 时间，生成的 `thesis.pdf` 即为开题报告。
 
-注意事项：
-1. LaTeX有一定门槛，建议先简单入门之后再使用本文档。
-2. 按照Word模板来看，《个人简介》这一章节应当和前一章节放在一起，因此用了一点丑陋的代码实现。
+
+## 注意事项
+
+1. LaTeX 有一定门槛，建议先简单入门之后再使用本项目。
+2. 按照 Word 模板来看，《个人简介》这一章节应当和前一章节放在一起，因此用了一点丑陋的代码实现。
 3. 《个人简介》中的个人照片，和右侧文本难以对齐，笔者能力有限，只能在图片下面手动添加白色空白区域，以达到视觉上的对齐。
 
-如遇到问题，欢迎自行解决后提交PR，毕竟笔者也不一定能解决。以下为原模板内容。
+如遇到问题，欢迎自行解决后提交 PR，毕竟笔者也不一定能解决。以下为原模板 `README.md` 内容。
 
 ---
 
