@@ -13,6 +13,7 @@
 ```text
 thesis.tex -> 封面信息
 chap/*.tex -> 各章节内容
+thesis.bib -> BibTeX 格式的文献
 image/*.* -> 图片，当然也可随意放置
 ```
 
