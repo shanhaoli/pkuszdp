@@ -338,9 +338,11 @@
 \fancypagestyle{plain}{
 	\fancyhf{}\renewcommand*{\headrulewidth}{0.75bp}
 	\fancyfoot[C]{\zihao{5}\normalfont{\thepage}}
-	\lhead{\raisebox{-0.38\height}{
+	\lhead{
+		\raisebox{-0.3\height}{
 		% \vspace{}
-		\includegraphics[width=2cm]{cover/pkuword-wholeblack.pdf}}\zihao{5}\normalfont{硕士学位论文开题报告}
+		\includegraphics[width=2cm]{cover/pkuword-spacedblack.pdf}}
+		\zihao{5}\normalfont{硕士学位论文开题报告}
 	}
 	\rhead{\zihao{5}\normalfont{题目：\@ctitle}}
 	% \if@twoside
